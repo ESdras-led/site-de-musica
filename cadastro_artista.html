@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Artista</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Cadastro Artista</h1>
+    </header>
+    <form id="form-artista" onsubmit="cadastrarArtista(); return false;">
+        <label for="nome-artista">Nome:</label>
+        <input type="text" id="nome-artista" required>
+        <label for="email-artista">Email:</label>
+        <input type="email" id="email-artista" required>
+        <button type="submit">Cadastrar</button>
+    </form>
+
+    <div id="artistaInfo" style="display: none;">
+        <h3>Gerenciar suas Músicas</h3>
+        <button onclick="mostrarCriarMusica()">Criar Música</button>
+        <button onclick="mostrarExibirMusicas()">Exibir Músicas</button>
+        <button onclick="mostrarAtualizarMusica()">Atualizar Música</button>
+        <button onclick="mostrarDeletarMusica()">Deletar Música</button>
+    </div>
+
+    <div id="playlistSection" style="display: none;">
+        <div id="createMusica" style="display: none;">
+            <h3>Criar Música</h3>
+            <input type="text" id="nome-musica" placeholder="Nome da Música">
+            <button onclick="criarMusica()">Criar</button>
+        </div>
+
+        <div id="showMusicas" style="display: none;">
+            <h3>Músicas</h3>
+            <ul id="musicaList"></ul>
+        </div>
+
+        <div id="updateMusica" style="display: none;">
+            <h3>Atualizar Música</h3>
+            <input type="text" id="musica-antiga" placeholder="Música Antiga">
+            <input type="text" id="nova-musica-artista" placeholder="Nova Música">
+            <button onclick="atualizarMusica()">Atualizar</button>
+        </div>
+        
+        <div id="deleteMusica" style="display: none;">
+            <h3>Deletar Música</h3>
+            <input type="text" id="musica-deletar" placeholder="Nome da Música">
+            <button onclick="deletarMusica()">Deletar Música</button>
+        </div>
+    </div>
+
+    <button onclick="window.location.href='index.html'">Voltar</button>
+
+    <script src="script.js"></script> 
+    <script src="artista.js"></script>
+</body>
+</html>

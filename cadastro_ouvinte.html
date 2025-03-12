@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Ouvinte</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Cadastro Ouvinte</h1>
+    </header>
+    <form id="form-ouvinte" onsubmit="cadastrarOuvinte(); return false;">
+        <label for="nome-ouvinte">Nome:</label>
+        <input type="text" id="nome-ouvinte" required>
+        <label for="email-ouvinte">Email:</label>
+        <input type="email" id="email-ouvinte" required>
+        <button type="submit">Cadastrar</button>
+    </form>
+
+    <div id="ouvinteInfo" style="display: none;">
+        <h3>Gerenciar suas Playlists</h3>
+        <button onclick="mostrarCriarPlaylist()">Criar Playlist</button>
+        <button onclick="mostrarExibirPlaylists()">Exibir Playlists</button>
+        <button onclick="mostrarAtualizarPlaylist()">Atualizar Playlist</button>
+        <button onclick="mostrarDeletarPlaylist()">Deletar Playlist</button>
+    </div>
+
+    <div id="playlistSection" style="display: none;">
+        <div id="createPlaylist" style="display: none;">
+            <h3>Criar Playlist</h3>
+            <input type="text" id="nome-playlist" placeholder="Nome da Playlist">
+            <button onclick="criarPlaylist()">Criar</button>
+        </div>
+
+        <div id="showPlaylists" style="display: none;">
+            <h3>Playlists</h3>
+            <ul id="playlistList"></ul>
+        </div>
+
+        <div id="updatePlaylist" style="display: none;">
+            <h3>Atualizar Playlist</h3>
+            <input type="text" id="playlist-antiga" placeholder="Playlist Antiga">
+            <input type="text" id="nova-playlist" placeholder="Nova Playlist">
+            <button onclick="atualizarPlaylist()">Atualizar</button>
+        </div>
+        
+        <div id="deletePlaylist" style="display: none;">
+            <h3>Deletar Playlist</h3>
+            <input type="text" id="playlist-deletar" placeholder="Nome da Playlist">
+            <button onclick="deletarPlaylist()">Deletar Playlist</button>
+        </div>
+    </div>
+
+    <button onclick="window.location.href='index.html'">Voltar</button>
+
+    <script src="script.js"></script> 
+    <script src="ouvinte.js"></script>
+</body>
+</html>
